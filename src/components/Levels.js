@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Level from "./Level";
 import Gem from "./Gem";
 import GemHolder from "./GemHolder";
@@ -134,7 +134,11 @@ export default function Levels({
     );
     return (
       <div className="level-row">
-        <svg width={levelIconSize} height={levelIconSize}>
+        <svg
+          width="60%"
+          // height="8vw"
+          viewBox={`0 0 ${levelIconSize} ${levelIconSize}`}
+        >
           {icon}
         </svg>
         {/* {info.completedTargets.length}/{info.targets.length} */}
@@ -160,15 +164,17 @@ export default function Levels({
   );
 
   return (
-    <section className="level-container">
-      <svg className="grid" width="300" height="300">
+    // <section className="level-container">
+    <Fragment>
+      <svg className="grid" width="80%" viewBox="0 0 300 300">
         {rects}
       </svg>
       <div className="level-info">{levelInfoEls}</div>
       <div className="level-play-button">
         <svg
-          width={playButtonSize}
-          height={playButtonSize}
+          width="15%"
+          // height="10vw"
+          viewBox={`0 0 ${playButtonSize} ${playButtonSize}`}
           className="play-button"
           onClick={playLevel}
         >
@@ -184,6 +190,6 @@ export default function Levels({
           </text>
         </svg>
       </div>
-    </section>
+    </Fragment>
   );
 }
