@@ -1,0 +1,278 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #efefef;
+}
+#root {
+  height: 100%;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.grid {
+  margin: auto;
+  margin-top: 30px;
+}
+
+/* .buttons {
+  margin-top: 20px;
+} */
+
+.move-piece.defined-move.active-move {
+  background-color: #666666;
+  border-color: #666666;
+  fill: white;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.action {
+  animation: Square-Change 1 0.6s linear;
+  animation-fill-mode: forwards;
+  /*transform-origin: 50% 50%;*/
+}
+
+circle {
+  z-index: 10000;
+}
+
+@keyframes Square-Change {
+  0% {
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  75% {
+    transform: rotate(40deg);
+  }
+  85% {
+    transform: rotate(50deg);
+  }
+  100% {
+    transform: rotate(45deg);
+    /* fill: #aaaaaa; */
+    fill: #666666;
+  }
+}
+
+/* @keyframes Square-Change-Completed {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(180deg);
+  }
+  85% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(405deg);
+    fill: #c2c2e7;
+  }
+}
+
+.completed {
+  animation: Square-Change-Completed 1.2s linear;
+  animation-fill-mode: forwards;
+} */
+
+text {
+  animation: Text-appear 1 0.6s ease;
+  animation-fill-mode: forwards;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 5px;
+  /* margin: 15px; */
+  /* width: 100%; */
+}
+
+.button {
+  border-radius: 10px;
+  border: 2px #666666 solid;
+  width: 40px;
+  height: 40px;
+  /* fill: #c2c2e7; */
+  fill: white;
+
+  margin: 15px;
+  /* background-color: white; */
+  background-color: #666666;
+
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); */
+  /* color: #c2c2e7; */
+  color: white;
+
+  text-align: center;
+}
+
+.buttons.hidden {
+  visibility: hidden;
+}
+
+.clear-button {
+  margin: 6px;
+  border: none;
+  /* border-radius: 8px; */
+  background-color: #666666;
+  color: white;
+}
+
+.levels {
+  position: absolute;
+  left: -160px;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid #999;
+  background: rgba(50, 50, 50, 0.4);
+  width: 160px;
+  transition: left 1s ease-in-out;
+}
+
+.level-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.levels.show {
+  left: 0px;
+}
+
+.level {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #999;
+  min-width: 18px;
+  margin: 5px;
+  color: #999;
+  /* border-radius: 50%; */
+}
+
+.completed-level {
+  /* border-color: gold;
+  color: gold; */
+}
+
+.next-level {
+  border-color: #666666;
+  color: white;
+}
+
+.next-level-button {
+  color: white;
+  border: 2px solid white;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 24px;
+  background-color: rgba(50, 50, 50, 0.2);
+  text-transform: uppercase;
+}
+
+.completed {
+}
+.next {
+  background-color: #998877;
+}
+.future {
+}
+
+.moves {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.move-display {
+  display: flex;
+  flex-direction: row;
+}
+
+.move-piece {
+  width: 20px;
+  height: 20px;
+  /* border: 1px dashed #c2c2e7; */
+  border: 3px dashed #ccc;
+  /* fill: #c2c2e7; */
+  /* border-radius: 100%; */
+  margin: 3px;
+}
+
+.move-piece.defined-move {
+  border: 3px solid #666666;
+  fill: #666666;
+  /* border: 1px solid #999;
+  fill: #999; */
+}
+
+.button.control {
+  padding-top: 7px;
+}
+
+.button.disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #ddd;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.go-text {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* .level-box-text{
+  strok
+} */
