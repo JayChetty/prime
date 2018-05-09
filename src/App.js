@@ -30,6 +30,10 @@ class App extends Component {
     this.setState({ completedLevels: [1] });
   };
 
+  setPrimes = primes => {
+    this.setState({ primes });
+  };
+
   componentDidMount() {
     const completedLevels = this.getLevels();
     const lastLevel = completedLevels[completedLevels.length - 1];
@@ -46,7 +50,7 @@ class App extends Component {
       showLevels: false,
       completedLevels: [1],
       moveList: [],
-      primes: [2, 2]
+      primes: []
     };
     this.playMove = this.playMove.bind(this);
     this.createLevelClickAction = this.createLevelClickAction.bind(this);
@@ -214,17 +218,7 @@ class App extends Component {
     const best = bestScores[this.state.target];
 
     const controls = (
-      <Controls
-        stalled={stalled}
-        number={number}
-        playMove={this.playMove}
-        best={best}
-        moveList={moveList}
-        moves={moves}
-        go={this.go}
-        deleteMove={this.deleteMove}
-        showLevels={showLevels}
-      />
+      <Controls setPrimes={this.setPrimes} chosenPrimes={primes} />
     );
 
     const main = showLevels ? (
