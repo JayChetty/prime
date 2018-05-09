@@ -43,9 +43,10 @@ class App extends Component {
       moves: 0,
       target: 2,
       stalled: false,
-      showLevels: true,
+      showLevels: false,
       completedLevels: [1],
-      moveList: []
+      moveList: [],
+      primes: [2, 2]
     };
     this.playMove = this.playMove.bind(this);
     this.createLevelClickAction = this.createLevelClickAction.bind(this);
@@ -194,17 +195,22 @@ class App extends Component {
     this.setState({ target });
   };
 
+  primeProduct = primes => {
+    return primes.reduce((prime, product) => product * prime, 1);
+  };
+
   render() {
     const {
       stalled,
-      number,
       showLevels,
       completedLevels,
       moves,
       levelIndex,
       moveList,
-      target
+      target,
+      primes
     } = this.state;
+    const number = this.primeProduct(primes);
     const best = bestScores[this.state.target];
 
     const controls = (
